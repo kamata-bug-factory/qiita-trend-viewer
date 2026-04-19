@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { LogOut, RefreshCw } from "lucide-react";
 
 interface HeaderProps {
-  onRefresh: () => void;
-  onLogout: () => void;
-  cachedAt: number | null;
+  onRefresh?: () => void;
+  onLogout?: () => void;
+  cachedAt?: number | null;
 }
 
 function formatUpdatedAt(cachedAt: number): string {
@@ -34,24 +34,26 @@ export function Header({ onRefresh, onLogout, cachedAt }: HeaderProps) {
           )}
         </div>
       </div>
-      <div className="flex items-center gap-1">
-        <Button
-          variant="ghost"
-          size="icon-xs"
-          onClick={onRefresh}
-          aria-label="Refresh"
-        >
-          <RefreshCw className="size-3.5" />
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon-xs"
-          onClick={onLogout}
-          aria-label="Logout"
-        >
-          <LogOut className="size-3.5" />
-        </Button>
-      </div>
+      {onRefresh && onLogout && (
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="icon-xs"
+            onClick={onRefresh}
+            aria-label="Refresh"
+          >
+            <RefreshCw className="size-3.5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon-xs"
+            onClick={onLogout}
+            aria-label="Logout"
+          >
+            <LogOut className="size-3.5" />
+          </Button>
+        </div>
+      )}
     </header>
   );
 }

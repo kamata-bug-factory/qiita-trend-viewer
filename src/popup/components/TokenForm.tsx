@@ -23,14 +23,14 @@ export function TokenForm({ onSubmit }: TokenFormProps) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 px-6 py-10">
-      <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10">
-        <KeyRound className="size-6 text-primary" />
+    <div className="flex flex-col items-center gap-6 px-6 py-8">
+      <div className="flex size-12 items-center justify-center rounded-xl bg-[#55C500]/10">
+        <KeyRound className="size-6 text-[#55C500]" />
       </div>
 
       <div className="space-y-1.5 text-center">
         <h2 className="text-base font-semibold tracking-tight">
-          Qiita API トークンを登録
+          APIトークンを登録
         </h2>
         <p className="text-xs leading-relaxed text-muted-foreground">
           トレンド記事の詳細を取得するために
@@ -49,9 +49,13 @@ export function TokenForm({ onSubmit }: TokenFormProps) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           aria-label="Qiita access token"
+          className="text-sm"
         />
         {error && <p className="text-xs text-destructive">{error}</p>}
-        <Button type="submit" className="w-full">
+        <Button
+          type="submit"
+          className="w-full bg-[#55C500] text-white hover:bg-[#4AB000]"
+        >
           登録する
         </Button>
       </form>

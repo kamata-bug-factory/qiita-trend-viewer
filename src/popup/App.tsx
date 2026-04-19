@@ -37,8 +37,11 @@ export function App() {
 
   if (!token) {
     return (
-      <div className="w-[400px] min-h-[500px]">
-        <TokenForm onSubmit={saveToken} />
+      <div className="w-[400px] min-h-[500px] flex flex-col">
+        <Header />
+        <div className="flex flex-1 items-center justify-center">
+          <TokenForm onSubmit={saveToken} />
+        </div>
       </div>
     );
   }
