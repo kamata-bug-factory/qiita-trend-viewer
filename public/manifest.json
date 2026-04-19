@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Qiita Trend Viewer",
+  "version": "1.0.0",
+  "description": "Qiitaのトレンド記事をブラウザのツールバーから確認できるChrome拡張機能",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://qiita.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "Qiita Trend Viewer"
+  }
+}
