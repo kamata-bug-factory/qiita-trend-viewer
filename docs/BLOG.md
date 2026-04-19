@@ -23,6 +23,10 @@ https://github.com/kamata-bug-factory/qiita-trend-viewer
 - タグ一覧
 - LGTM数
 
+| 初回はトークンを登録 | トレンド記事が一覧表示される |
+| :---: | :---: |
+| ![トークン登録画面](images/token-form.png) | ![記事一覧画面](images/article-list.png) |
+
 記事データは `chrome.storage.local` に3時間キャッシュされるため、ポップアップを開くたびにAPIリクエストが走ることはありません。
 
 ## 技術スタック
