@@ -12,6 +12,7 @@ export function App() {
     articles,
     loading,
     error,
+    cachedAt,
     fetch: fetchArticles,
     refetch,
   } = useArticles();
@@ -44,7 +45,7 @@ export function App() {
 
   return (
     <div className="w-[400px] min-h-[500px] flex flex-col">
-      <Header onRefresh={handleRefresh} onLogout={clearToken} />
+      <Header onRefresh={handleRefresh} onLogout={clearToken} cachedAt={cachedAt} />
       <div className="flex-1 overflow-y-auto">
         <ArticleList
           articles={articles}

@@ -3,7 +3,7 @@ import type { ArticleDetail, CachedArticles } from "@/types/article";
 const CACHE_KEY = "qiita_articles_cache";
 const CACHE_TTL_MS = 3 * 60 * 60 * 1000; // 3 hours
 
-export async function getCachedArticles(): Promise<ArticleDetail[] | null> {
+export async function getCachedArticles(): Promise<CachedArticles | null> {
   const result = await chrome.storage.local.get(CACHE_KEY);
   const cached = result[CACHE_KEY] as CachedArticles | undefined;
 
@@ -15,7 +15,7 @@ export async function getCachedArticles(): Promise<ArticleDetail[] | null> {
     return null;
   }
 
-  return cached.articles.length > 0 ? cached.articles : null;
+  return cached.articles.length > 0 ? cached : null;
 }
 
 export async function setCachedArticles(
