@@ -9,7 +9,10 @@ interface HeaderProps {
 export function Header({ onRefresh, onLogout }: HeaderProps) {
   return (
     <header className="flex items-center justify-between border-b border-border px-4 py-3">
-      <h1 className="text-sm font-bold tracking-tight">Qiita Trend</h1>
+      <div className="flex items-center gap-2">
+        <img src="/icons/icon48.png" alt="" className="size-5" />
+        <h1 className="text-sm font-bold tracking-tight">Qiita Trend</h1>
+      </div>
       <div className="flex items-center gap-1">
         <Button
           variant="ghost"
