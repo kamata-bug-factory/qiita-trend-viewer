@@ -11,11 +11,11 @@ function formatUpdatedAt(cachedAt: number): string {
   const diffMs = Date.now() - cachedAt;
   const diffMin = Math.floor(diffMs / 60_000);
 
-  if (diffMin < 1) return "たった今";
-  if (diffMin < 60) return `${diffMin}分前`;
+  if (diffMin < 1) return "たった今更新";
+  if (diffMin < 60) return `${diffMin}分前に更新`;
 
   const diffHour = Math.floor(diffMin / 60);
-  return `${diffHour}時間前`;
+  return `${diffHour}時間前に更新`;
 }
 
 export function Header({ onRefresh, onLogout, cachedAt }: HeaderProps) {
@@ -29,7 +29,7 @@ export function Header({ onRefresh, onLogout, cachedAt }: HeaderProps) {
           </h1>
           {cachedAt && (
             <p className="mt-0.5 text-[10px] leading-none text-muted-foreground">
-              {formatUpdatedAt(cachedAt)}に更新
+              {formatUpdatedAt(cachedAt)}
             </p>
           )}
         </div>
