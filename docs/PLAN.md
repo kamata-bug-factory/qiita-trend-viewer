@@ -1,5 +1,5 @@
 Qiitaのトレンド記事をブラウザのツールバーから確認できるChrome拡張を作りたい。
-著者、記事タイトル、タグ、LGTM数を表示する。
+著者、記事タイトル、投稿日時、タグ、LGTM数を表示する。
 
 トレンド記事は`https://qiita.com/popular-items/feed`をパースして取得する。
 フィードから取得した記事IDを元に、タグとLGTM数をQiita APIの`GET /api/v2/items/:item_id`を使って取得する。
