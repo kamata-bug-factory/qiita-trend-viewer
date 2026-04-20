@@ -20,6 +20,7 @@ https://github.com/kamata-bug-factory/qiita-trend-viewer
 
 - 記事タイトル（クリックで記事ページに遷移）
 - 著者名
+- 投稿日時（「〇分前」「〇時間前」などの相対時刻）
 - タグ一覧
 - LGTM数
 
@@ -79,7 +80,7 @@ src/
 
 ```
 1. フィード取得   : GET https://qiita.com/popular-items/feed
-                    → 記事ID, タイトル, 著者名を取得（上位10件）
+                    → 記事ID, タイトル, 著者名, 投稿日時を取得（上位10件）
 
 2. API で詳細取得 : GET /api/v2/items/:item_id × 10件
                     → タグ一覧, LGTM数を補完
