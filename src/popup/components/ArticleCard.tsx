@@ -1,6 +1,7 @@
 import type { ArticleDetail } from "@/types/article";
 import { Badge } from "@/components/ui/badge";
 import { Heart } from "lucide-react";
+import { formatRelativeTime } from "@/lib/relativeTime";
 
 interface ArticleCardProps {
   article: ArticleDetail;
@@ -8,6 +9,8 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, rank }: ArticleCardProps) {
+  const relativeTime = formatRelativeTime(article.publishedAt);
+
   return (
     <a
       href={article.url}
@@ -26,6 +29,9 @@ export function ArticleCard({ article, rank }: ArticleCardProps) {
 
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
           <span>@{article.author}</span>
+          {relativeTime && (
+            <time dateTime={article.publishedAt}>{relativeTime}</time>
+          )}
           <span className="flex items-center gap-0.5">
             <Heart className="size-3" />
             {article.likesCount}

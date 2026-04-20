@@ -3,6 +3,7 @@ export interface FeedArticle {
   title: string;
   author: string;
   url: string;
+  publishedAt: string;
 }
 
 export interface ArticleDetail {
@@ -10,6 +11,7 @@ export interface ArticleDetail {
   title: string;
   author: string;
   url: string;
+  publishedAt: string;
   tags: string[];
   likesCount: number;
 }

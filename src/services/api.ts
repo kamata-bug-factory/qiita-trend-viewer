@@ -28,6 +28,7 @@ export async function fetchArticleDetail(
     title: feedArticle.title,
     author: feedArticle.author,
     url: feedArticle.url,
+    publishedAt: feedArticle.publishedAt,
     tags: data.tags.map((t) => t.name),
     likesCount: data.likes_count,
   };

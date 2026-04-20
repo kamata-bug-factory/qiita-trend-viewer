@@ -1,6 +1,6 @@
 import type { ArticleDetail, CachedArticles } from "@/types/article";
 
-const CACHE_KEY = "qiita_articles_cache";
+const CACHE_KEY = "qiita_articles_cache_v2";
 const CACHE_TTL_MS = 3 * 60 * 60 * 1000; // 3 hours
 
 export async function getCachedArticles(): Promise<CachedArticles | null> {

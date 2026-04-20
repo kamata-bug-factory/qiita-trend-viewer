@@ -29,10 +29,15 @@ export async function fetchTrendFeed(): Promise<FeedArticle[]> {
     const author =
       authorEl?.getElementsByTagNameNS(ATOM_NS, "name")[0]?.textContent ?? "";
 
+    const publishedAt =
+      entry.getElementsByTagNameNS(ATOM_NS, "published")[0]?.textContent ??
+      entry.getElementsByTagNameNS(ATOM_NS, "updated")[0]?.textContent ??
+      "";
+
     const id = extractArticleId(url);
     if (!id) continue;
 
-    articles.push({ id, title, author, url });
+    articles.push({ id, title, author, url, publishedAt });
   }
 
   return articles;
