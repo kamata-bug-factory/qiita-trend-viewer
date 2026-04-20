@@ -2,6 +2,8 @@
 
 Qiitaのトレンド記事をブラウザのツールバーから確認できるChrome拡張。
 
+![Qiita Trend Viewer](docs/images/screenshot.png)
+
 ## インストール
 
 1. [Releases ページ](https://github.com/kamata-bug-factory/qiita-trend-viewer/releases/latest) から最新の `qiita-trend-viewer-vX.X.X.zip` をダウンロード
